@@ -65,7 +65,7 @@ public class Screen extends JFrame {
         pais.setVerticalAlignment(JLabel.CENTER);
         pais.setHorizontalAlignment(JLabel.CENTER);
 
-        municipio = new JLabel("municipiocípio");
+        municipio = new JLabel("Município");
         municipio.setBounds(30,310,170,30);
         municipio.setBorder(BorderFactory.createLineBorder(Color.black));
         municipio.setVerticalAlignment(JLabel.CENTER);

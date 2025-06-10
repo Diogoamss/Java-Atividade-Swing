@@ -33,7 +33,7 @@ public class Screen extends JFrame {
         titulo = new JLabel("Cadastro de Pessoa");
         titulo.setBounds(30, 30,600,50);
         titulo.setFont(new Font("Arial", Font.BOLD, 50));
-        titulo.setForeground(new Color(96, 34, 224));
+        titulo.setForeground(new Color(244,123,32));
 
         tipo = new JLabel("Tipo");
         tipo.setBounds(30, 110, 170, 30);
@@ -219,7 +219,7 @@ public class Screen extends JFrame {
         confirmar.setBorder(BorderFactory.createLineBorder(Color.black));
         confirmar.setVerticalAlignment(JLabel.CENTER);
         confirmar.setHorizontalAlignment(JLabel.CENTER);
-        confirmar.setBackground(new Color(96, 34, 224));
+        confirmar.setBackground(new Color(244,123,32));
         confirmar.setForeground(Color.white);
 
         excluir = new JButton("Excluir");
@@ -227,7 +227,7 @@ public class Screen extends JFrame {
         excluir.setBorder(BorderFactory.createLineBorder(Color.black));
         excluir.setVerticalAlignment(JLabel.CENTER);
         excluir.setHorizontalAlignment(JLabel.CENTER);
-        excluir.setBackground(new Color(96, 34, 224));
+        excluir.setBackground(new Color(244,123,32));
         excluir.setForeground(Color.white);
         excluir.addActionListener(e -> deletar());
 
@@ -295,7 +295,7 @@ public class Screen extends JFrame {
     private void confirmar(){
         JPasswordField passwordField = new JPasswordField();
         
-
+        //option é o painel para digitar a senha 
         int option = JOptionPane.showConfirmDialog(
             null,
             passwordField,
@@ -303,10 +303,10 @@ public class Screen extends JFrame {
             JOptionPane.OK_CANCEL_OPTION,
             JOptionPane.PLAIN_MESSAGE
             );
-
+                //se opção for ok ele vai ir para verficiação da senha 
             if (option == JOptionPane.OK_OPTION){
                 String senha = new String(passwordField.getPassword());
-
+                //se a senha digitada bater com a senha a senha definida ele apaga o formulario
                 if (senha.equals("0000")){ //senha é 0000
                     JOptionPane.showMessageDialog(
                     null,
@@ -317,6 +317,7 @@ public class Screen extends JFrame {
 
                     Esvaziar();
                 } else {
+                    //se a senha não bater ele mostra uma mensagem nova de erro  
                     JOptionPane.showMessageDialog(
                         null,
                         "Senha incorreta!",
@@ -349,14 +350,11 @@ public class Screen extends JFrame {
 
         Esvaziar();
     }
-
+        //apaga tudo escrito dentro dos campos. Sem possibilidade de salvar ou retornar.
     private  void Esvaziar(){
         for(JTextField campo : listaCampos) {
             campo.setText("");
         }
     }
-
-
-
 
 }
